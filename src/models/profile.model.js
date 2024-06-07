@@ -3,7 +3,7 @@ var db = require("../../config/db.config");
 const common = require("../common/common");
 const environment = require("../environments/environment");
 const { executeQuery } = require("../helpers/utils");
-
+const moment = require("moment");
 var Profile = function (profile) {
   this.userId = profile.userId;
   this.userName = profile.userName;
@@ -24,7 +24,7 @@ var Profile = function (profile) {
   this.bodyType = profile.bodyType;
   this.idealDate = profile.idealDate;
   this.profilePicName = profile.imageUrl;
-  this.createdDate = profile.createdDate;
+  this.createdDate = moment(profile?.createdDate).format("YYYY-MM-DD HH:mm:ss");
   this.updatedDate = profile.updatedDate;
   this.matchHaveChild = profile.matchHaveChild;
   this.matchIsVaccinated = profile.matchIsVaccinated;
