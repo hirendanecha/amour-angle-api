@@ -14,6 +14,7 @@ router.post("/login", userController.adminLogin);
 router.get("/verify-token/:token", userController.verifyToken);
 router.post("/forgot-password", userController.forgotPassword);
 router.get("/profile/:id", profileController.FindProfileById);
+router.get("/states", userController.getStats);
 router.use(authorize.authorization);
 router.get("/get-profile-pictures/:id", profileController.getProfilePictures);
 router.get("/get-profiles/:id", profileController.getProfiles);
